@@ -1,41 +1,38 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
-import { HttpService } from "@/service/axios.service";
 
 Vue.use(VueRouter);
 
-async function authorizationMiddleware(
-  to: any,
-  from: any,
-  next: any
-): Promise<void> {
-  try {
-    if (await HttpService.Authorization()) {
-      next();
-    } else {
-      next("/login");
-    }
-  } catch {
-    next("/login");
-  }
-}
+// async function authorizationMiddleware(
+//   to: any,
+//   from: any,
+//   next: any
+// ): Promise<void> {
+//   try {
+//     if (await HttpService.Authorization()) {
+//       next();
+//     } else {
+//       next("/login");
+//     }
+//   } catch {
+//     next("/login");
+//   }
+// }
 
 const routes: Array<RouteConfig> = [
   {
     path: "/",
     name: "Home",
     component: () =>
-      import(
-        /* webpackChunkName: "about" */ "../views/Home.vue"
-      ),
+      import(/* webpackChunkName: "about" */ "../views/Home.vue"),
     // beforeEnter: authorizationMiddleware
-  }
+  },
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes
+  routes,
 });
 
 export default router;

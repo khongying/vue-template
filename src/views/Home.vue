@@ -28,7 +28,8 @@ export default class Home extends Vue {
       // await this.$loading.loading(true);
       await this.$loading.loading(true);
       await this.$toasts.danger("assdddd","dddd");
-      console.log("HOME");
+      await this.$users.getUsers();
+      console.log(this.$users.state.users);
       await this.$loading.loading(false);
       return null;
     } catch (e) {

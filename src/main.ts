@@ -12,6 +12,7 @@ import { BootstrapVue, IconsPlugin } from "bootstrap-vue";
 import { ToastsPlugin } from "@/plugins/toasts.plugin";
 import { AuthPlugin } from "@/plugins/auth.plugin";
 import { LoadingPlugin } from "@/plugins/loading.plugin";
+import { UsersPlugin } from "@/plugins/users.plugin";
 import {
   faSignOutAlt,
   faBars,
@@ -56,6 +57,7 @@ declare module "vue/types/vue" {
     $auth: AuthPlugin;
     $loading: LoadingPlugin;
     $boxConfirm: BoxConfirmPlugin;
+    $users: UsersPlugin;
   }
 }
 (async () => {
@@ -63,6 +65,7 @@ declare module "vue/types/vue" {
   Vue.prototype.$auth = new AuthPlugin(store);
   Vue.prototype.$loading = new LoadingPlugin(store);
   Vue.prototype.$boxConfirm = new BoxConfirmPlugin();
+  Vue.prototype.$users = new UsersPlugin(store);
   new Vue({
     router,
     store,
