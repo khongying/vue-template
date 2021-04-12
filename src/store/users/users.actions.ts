@@ -5,15 +5,15 @@ import { UsersInitState } from "./users.types";
 
 export const UsersAction: ActionTree<UsersInitState, RootState> = {
   async _getUsersAll({
-    commit,
+    commit
   }: ActionContext<UsersInitState, RootState>): Promise<void> {
     try {
-      let res = await HttpService.instance().get("/users");       
+      let res = await HttpService.instance().get("/users");
       commit("GET_ALL_USERS", res.data);
     } catch {
       throw new Error("forgot password fail");
     }
-  },
+  }
 
   // async _GetUsers(
   //   { commit }: ActionContext<LoadingInitState, RootState>,

@@ -30,6 +30,7 @@ import {
 import LogoLayoutController from "@/layout/logo/logo.layout.vue";
 import { BoxConfirmPlugin } from "@/plugins/boxConfirm.plugin";
 import DefaultLayout from "./layout/default/default.layout.vue";
+import { TodoPlugin } from "@/plugins/todo.plugin";
 
 library.add(
   faSignOutAlt,
@@ -58,6 +59,7 @@ declare module "vue/types/vue" {
     $loading: LoadingPlugin;
     $boxConfirm: BoxConfirmPlugin;
     $users: UsersPlugin;
+    $todo: TodoPlugin;
   }
 }
 (async () => {
@@ -66,6 +68,7 @@ declare module "vue/types/vue" {
   Vue.prototype.$loading = new LoadingPlugin(store);
   Vue.prototype.$boxConfirm = new BoxConfirmPlugin();
   Vue.prototype.$users = new UsersPlugin(store);
+  Vue.prototype.$todo = new TodoPlugin(store);
   new Vue({
     router,
     store,

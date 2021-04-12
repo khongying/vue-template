@@ -23,16 +23,22 @@ const routes: Array<RouteConfig> = [
   {
     path: "/",
     name: "Home",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Home.vue"),
+    component: () => import(/* webpackChunkName: "about" */ "../views/Home.vue")
     // beforeEnter: authorizationMiddleware
   },
+  {
+    path: "/todo",
+    name: "Todo",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/todo/todo.index.vue")
+    // beforeEnter: authorizationMiddleware
+  }
 ];
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes,
+  routes
 });
 
 export default router;

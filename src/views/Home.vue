@@ -17,8 +17,8 @@ import { AuthInitState } from "@/interface/auth.interface";
 @Component({
   name: "Home",
   components: {
-    HelloWorld: HelloWorldVue,
-  },
+    HelloWorld: HelloWorldVue
+  }
 })
 export default class Home extends Vue {
   public auth = {} as AuthInitState;
@@ -27,7 +27,7 @@ export default class Home extends Vue {
     try {
       // await this.$loading.loading(true);
       await this.$loading.loading(true);
-      await this.$toasts.danger("assdddd","dddd");
+      await this.$toasts.danger("assdddd", "dddd");
       await this.$users.getUsers();
       console.log(this.$users.state.users);
       await this.$loading.loading(false);

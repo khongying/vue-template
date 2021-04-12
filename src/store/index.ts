@@ -4,10 +4,11 @@ import { RootState } from "@/interface/main.interface";
 import { authState } from "@/store/auth/auth.index";
 import { loadingState } from "@/store/loading/loading.index";
 import { usersState } from "@/store/users/users.index";
-Vue.use(Vuex);  
+import { todoState } from "@/store/todo/todo.index";
+Vue.use(Vuex);
 const options: StoreOptions<RootState> = {
   state: {
-    loading: false,
+    loading: false
   },
   mutations: {},
   actions: {},
@@ -15,6 +16,7 @@ const options: StoreOptions<RootState> = {
     auth: authState,
     loading: loadingState,
     users: usersState,
-  },
+    todo: todoState
+  }
 };
 export default new Vuex.Store(options);

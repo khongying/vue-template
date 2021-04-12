@@ -22,9 +22,7 @@
           <b-nav-item-dropdown right>
             <!--            Using 'button-content' slot-->
             <template v-slot:button-content>
-              <em
-                >admin</em
-              >
+              <em>admin</em>
             </template>
             <b-dropdown-item v-on:click="LogOut">ออกจากระบบ</b-dropdown-item>
           </b-nav-item-dropdown>

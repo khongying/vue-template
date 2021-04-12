@@ -12,5 +12,4 @@ export class UsersPlugin extends Vue {
   }
   getUsers = async () =>
     await this.$store.dispatch(`${this.namespace}/${"_getUsersAll"}`);
-
 }

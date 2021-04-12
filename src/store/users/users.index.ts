@@ -18,5 +18,5 @@ export const usersState: Module<UsersInitState, RootState> = {
   state: usersInitState,
   actions: UsersAction,
   mutations: UsersMutations,
-  getters: UsersGetters,
+  getters: UsersGetters
 };
